@@ -28,7 +28,7 @@ class Landing extends React.Component {
     const rootJSX = <div>
       <h2> Welcome to the Tomb of Horrors!</h2>
       <Link to='/signup'>Sign up</Link>
-      <Link to='/signin'>Sign In</Link>
+      <Link to='/login'>Sign In</Link>
     </div>;
 
     const signUpJSX = <div>

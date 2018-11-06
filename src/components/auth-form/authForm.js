@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const emptyState = {
+const defaultState = {
   username: '',
   email: '',
   password: '', // Naked password
@@ -12,22 +12,22 @@ const emptyState = {
 class AuthForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = emptyState;
+    this.state = defaultState;
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
+    this.setState({[name]: value});
+  };
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.onComplete(this.state);
-    this.setState(emptyState);
-  }
+    this.setState(defaultState);
+  };
 
   render() {
-    let { type } = this.props; //eslint-disable-line
+    let { type } = this.props;
     type = type === 'login' ? 'login' : 'signup';
 
     const signupJSX = <input
